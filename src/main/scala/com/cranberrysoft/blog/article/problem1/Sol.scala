@@ -7,6 +7,7 @@ object Sol {
 class Sol extends Solution {
 
   override def differentTeams(skills: String): Int = {
+    import com.cranberrysoft.blog.article.problem1.extra.Counter._
     findMaxNumberOfTeams(countCharacters(skills).values.toSeq)
   }
 
@@ -14,5 +15,5 @@ class Sol extends Solution {
     case membersBySkills if membersBySkills.size == Solution.TEAM.length => membersBySkills.min
     case _ => 0
   }
-  private def countCharacters(skills: String) = skills.toCharArray.groupBy(identity).mapValues(_.size)
+
 }
